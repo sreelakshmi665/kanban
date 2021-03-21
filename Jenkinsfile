@@ -26,7 +26,7 @@ pipeline{
 
         stage("pushing the images to docker hub"){
             steps{
-                withDockerRegistry([ credentialsId: "83fb3bd9-d130-41d3-b0f9-3599a244c460", url: "" ]){
+                withDockerRegistry([ credentialsId: "48a8341e-a749-48c9-81a6-6ec073bf27db", url: "" ]){
                     bat "docker push sreelakshmi14/kanban-board_kanban-app:latest"
                     bat "docker push sreelakshmi14/kanban-board_kanban-ui:latest"
                   bat "docker push sreelakshmi14/postgres:9.6-alpine"
