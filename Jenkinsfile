@@ -27,8 +27,8 @@ pipeline{
         stage("pushing the images to docker hub"){
             steps{
                 withDockerRegistry([ credentialsId: "48a8341e-a749-48c9-81a6-6ec073bf27db", url: "https://registry.hub.docker.com" ]){
-                    bat "docker push sreelakshmi14/k8s_kanban-app:latest"
-                    bat "docker push sreelakshmi14/k8s_kanban-ui:latest"
+                    bat "docker push sreelakshmi14/k8s_kanban-app"
+                    bat "docker push sreelakshmi14/k8s_kanban-ui"
                   
                 }
             }
