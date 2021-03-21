@@ -17,8 +17,8 @@ pipeline{
         }
          stage("commiting the deocker images"){
             steps{
-                bat "docker commit kanban-board_kanban-app sreelakshmi14/k8s_kanban-app:latest"
-                bat "docker commit kanban-board_kanban-ui sreelakshmi14/k8s_kanban-ui:latest" 
+                bat "docker commit kanban-app sreelakshmi14/k8s_kanban-app:latest"
+                bat "docker commit kanban-ui sreelakshmi14/k8s_kanban-ui:latest" 
             }
         }
 
