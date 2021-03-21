@@ -15,6 +15,12 @@ pipeline{
                 bat "docker-compose up -d"
             }
         }
+         stage("commiting the deocker images"){
+            steps{
+                bat "docker commit kanban-board_kanban-app sreelakshmi14/k8s_kanban-app:latest"
+                bat "docker commit kanban-board_kanban-ui sreelakshmi14/k8s_kanban-ui:latest" 
+            }
+        }
 
        
 
@@ -23,7 +29,7 @@ pipeline{
                 withDockerRegistry([ credentialsId: "48a8341e-a749-48c9-81a6-6ec073bf27db", url: "" ]){
                     bat "docker push sreelakshmi14/k8s_kanban-app:latest"
                     bat "docker push sreelakshmi14/k8s_kanban-ui:latest"
-                  bat "docker push postgres:9.6-alpine"
+                  
                 }
             }
         }
